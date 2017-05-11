@@ -1,0 +1,28 @@
+﻿@* Generator: Template TypeVisibility: Public GeneratePrettyNames: True *@
+@using System
+@using System.Globalization
+@using System.Reflection
+@using System.Collections.Generic
+@using EmilePlugins.Mvc.Module.PDFJS.Pages
+@using EmilePlugins.Mvc.ModuleActivator
+@using EmilePlugins.Mvc.Module.PDFJS
+
+@inherits RazorPage
+<!DOCTYPE html>
+<html lang="@CultureInfo.CurrentUICulture.TwoLetterISOLanguageName" dir="ltr" mozdisallowselectionprint moznomarginboxes>
+<head>
+    <meta http-equiv="Content-Type" content="text/html" >
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="google" content="notranslate">
+    <title>@Title - 预览</title>
+</head>
+    <body tabindex="1" class="loadingInProgress">
+        <!-- Wrap all page content here -->
+        @RenderBody()
+
+    </body>
+</html>
+
+
+ 

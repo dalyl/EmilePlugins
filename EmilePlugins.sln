@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26403.7
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{DADADCA6-698F-4AB0-B110-49AEAA74FF89}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{B64C2D60-4ABB-4193-88BC-113FC8656EF6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmilePlugins.Mvc.ModuleActivator", "src\EmilePlugins.Mvc.ModuleActivator\EmilePlugins.Mvc.ModuleActivator.csproj", "{697CD678-CC2F-4425-B70D-28D465A194E1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Mvc.Module", "Mvc.Module", "{95470EC3-6AF6-4088-AB25-9585DD4CB8B0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmilePlugins.Mvc.Module.PDFJS", "src\EmilePlugins.Mvc.Module.PDFJS\EmilePlugins.Mvc.Module.PDFJS.csproj", "{8D137D0A-5774-4E4B-98BD-5F53D102F3CD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sample", "sample", "{9F633CA0-4F34-476D-8BE5-16235C773B83}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mvc.Module.PDFJS.Demo", "sample\Mvc.Module.PDFJS.Demo\Mvc.Module.PDFJS.Demo.csproj", "{6CEB6EAE-F89A-4322-BEAA-82345ED7138F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{697CD678-CC2F-4425-B70D-28D465A194E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{697CD678-CC2F-4425-B70D-28D465A194E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{697CD678-CC2F-4425-B70D-28D465A194E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{697CD678-CC2F-4425-B70D-28D465A194E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D137D0A-5774-4E4B-98BD-5F53D102F3CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D137D0A-5774-4E4B-98BD-5F53D102F3CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D137D0A-5774-4E4B-98BD-5F53D102F3CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D137D0A-5774-4E4B-98BD-5F53D102F3CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6CEB6EAE-F89A-4322-BEAA-82345ED7138F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CEB6EAE-F89A-4322-BEAA-82345ED7138F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CEB6EAE-F89A-4322-BEAA-82345ED7138F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CEB6EAE-F89A-4322-BEAA-82345ED7138F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{697CD678-CC2F-4425-B70D-28D465A194E1} = {DADADCA6-698F-4AB0-B110-49AEAA74FF89}
+		{95470EC3-6AF6-4088-AB25-9585DD4CB8B0} = {DADADCA6-698F-4AB0-B110-49AEAA74FF89}
+		{8D137D0A-5774-4E4B-98BD-5F53D102F3CD} = {95470EC3-6AF6-4088-AB25-9585DD4CB8B0}
+		{6CEB6EAE-F89A-4322-BEAA-82345ED7138F} = {9F633CA0-4F34-476D-8BE5-16235C773B83}
+	EndGlobalSection
+EndGlobal
