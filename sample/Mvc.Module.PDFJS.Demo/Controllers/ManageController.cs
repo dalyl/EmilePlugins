@@ -6,9 +6,9 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-using Web.Pdf.Preview.Models;
+using Mvc.Module.PDFJS.Demo.Models;
 
-namespace Web.Pdf.Preview.Controllers
+namespace Mvc.Module.PDFJS.Demo.Controllers
 {
     [Authorize]
     public class ManageController : Controller

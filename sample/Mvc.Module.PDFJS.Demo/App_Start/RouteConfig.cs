@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace Web.Pdf.Preview
+namespace Mvc.Module.PDFJS.Demo
 {
     public class RouteConfig
     {

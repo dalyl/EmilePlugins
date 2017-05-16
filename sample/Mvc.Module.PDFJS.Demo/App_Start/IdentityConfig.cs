@@ -10,9 +10,9 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
-using Web.Pdf.Preview.Models;
+using Mvc.Module.PDFJS.Demo.Models;
 
-namespace Web.Pdf.Preview
+namespace Mvc.Module.PDFJS.Demo
 {
     public class EmailService : IIdentityMessageService
     {

@@ -38,20 +38,20 @@ namespace EmilePlugins.Mvc.Module.PDFJS.Pages
     #line hidden
     using System.Text;
     
-    #line 7 "..\..\Pages\LayoutPage.cshtml"
-    using EmilePlugins.Mvc.ModuleActivator;
-    
-    #line default
-    #line hidden
-    
     #line 8 "..\..\Pages\LayoutPage.cshtml"
-    using Mvc.Module.PDFJS;
+    using EmilePlugins.Mvc.Module.PDFJS;
     
     #line default
     #line hidden
     
     #line 6 "..\..\Pages\LayoutPage.cshtml"
-    using Mvc.Module.PDFJS.Pages;
+    using EmilePlugins.Mvc.Module.PDFJS.Pages;
+    
+    #line default
+    #line hidden
+    
+    #line 7 "..\..\Pages\LayoutPage.cshtml"
+    using EmilePlugins.Mvc.ModuleActivator;
     
     #line default
     #line hidden
@@ -103,12 +103,37 @@ WriteLiteral(@""" dir=""ltr"" mozdisallowselectionprint moznomarginboxes>
             
             #line default
             #line hidden
-WriteLiteral(" - 预览</title>\r\n</head>\r\n    <body tabindex=\"1\" class=\"loadingInProgress\">\r\n      " +
-"  <!-- Wrap all page content here -->\r\n        ");
+WriteLiteral(" - 预览</title>\r\n    <script>\r\n        var HOSTED_VIEWER_ORIGINS = [\'null\', \'http:/" +
+"/mozilla.github.io\', \'https://mozilla.github.io\'];\r\n        function configure(P" +
+"DFJS) {\r\n            PDFJS.imageResourcesPath = \'/images/\';\r\n            PDFJS.w" +
+"orkerSrc = \'/");
 
 
             
-            #line 22 "..\..\Pages\LayoutPage.cshtml"
+            #line 23 "..\..\Pages\LayoutPage.cshtml"
+                           Write(Resource.Setting.ModuleName);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("/js/pdfworker\';\r\n            PDFJS.cMapUrl = \'/cmaps/\';\r\n            PDFJS.cMapPa" +
+"cked = true;\r\n        }\r\n\r\n        function GetDebuger()\r\n        {\r\n           " +
+" return \'/");
+
+
+            
+            #line 30 "..\..\Pages\LayoutPage.cshtml"
+                Write(Resource.Setting.ModuleName);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("/js/debugger\'; \r\n        }\r\n\r\n    </script>\r\n</head>\r\n    <body tabindex=\"1\" clas" +
+"s=\"loadingInProgress\">\r\n        <!-- Wrap all page content here -->\r\n        ");
+
+
+            
+            #line 37 "..\..\Pages\LayoutPage.cshtml"
    Write(RenderBody());
 
             

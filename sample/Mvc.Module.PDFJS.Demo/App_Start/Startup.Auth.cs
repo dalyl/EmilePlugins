@@ -5,10 +5,10 @@ using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
-using Web.Pdf.Preview.Models;
+using Mvc.Module.PDFJS.Demo.Models;
 using EmilePlugins.Mvc.Module.PDFJS;
 
-namespace Web.Pdf.Preview
+namespace Mvc.Module.PDFJS.Demo
 {
     public partial class Startup
     {

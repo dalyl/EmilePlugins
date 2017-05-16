@@ -63,7 +63,7 @@ namespace EmilePlugins.Mvc.ModuleActivator
         protected override void WriteResponse(DashboardRequest request, DashboardResponse response)
         {
             var resourceName =  _filter(_resourceNames, request);
-            WriteResource(response, _assembly, $"{_baseNamespace}.{resourceName}");
+            WriteResource(response,  $"{_baseNamespace}.{resourceName}");
         }
 
       

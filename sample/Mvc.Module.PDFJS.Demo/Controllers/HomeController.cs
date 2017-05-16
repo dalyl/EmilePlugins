@@ -5,7 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Web.Pdf.Preview.Controllers
+namespace Mvc.Module.PDFJS.Demo.Controllers
 {
     public class HomeController : Controller
     {
@@ -30,7 +30,7 @@ namespace Web.Pdf.Preview.Controllers
 
         public ActionResult Down()
         {
-            var path = $@"D:\Project\demo\Pdf.Preview\demo\Web.Pdf.Preview\Files\12-20170505-043723.pdf";
+            var path = $@"{AppDomain.CurrentDomain.BaseDirectory}\Files\12-20170505-043723.pdf";
             //return File(path, "application/octet-stream", "043723.pdf");
             //byte[] data = File.ReadAllBytes(filePath);
             //MemoryStream ms = new MemoryStream(data);

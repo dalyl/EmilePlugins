@@ -33,6 +33,7 @@ namespace EmilePlugins.Mvc.ModuleActivator
 
         public enum Define
         {
+            Html,
             Javascript,
             ScriptMap,
             Locale,
@@ -40,12 +41,12 @@ namespace EmilePlugins.Mvc.ModuleActivator
             Css,
             ImagePng,
             ImageJpg,
-            ImageGif
+            ImageGif,
+            ImageCur,
+            ImageSvg,
         }
 
-
         public readonly static Dictionary<Define, Struct> Defines = new Dictionary<Define, Struct>();
-
 
         public readonly static Dictionary<string, Struct> DefineExtensions = new Dictionary<string, Struct>();
 
@@ -53,15 +54,19 @@ namespace EmilePlugins.Mvc.ModuleActivator
 
         static StaticResource()
         {
-            var Javascript = new Struct("js", "application/javascript",  DispatcherFilter.OtherFilter);
-            var ScriptMap = new Struct("map", "application/javascript",  DispatcherFilter.OtherFilter);
+            var Html = new Struct("html", "text/html", DispatcherFilter.CommonFilter);
+            var Javascript = new Struct("js", "application/javascript", DispatcherFilter.OtherFilter);
+            var ScriptMap = new Struct("map", "application/javascript", DispatcherFilter.OtherFilter);
             var Locale = new Struct("properties", "application/javascript", DispatcherFilter.LocaleFilter);
             var Cmap = new Struct("bcmap", "text/css", DispatcherFilter.CommonFilter);
             var Css = new Struct("css", "text/css", DispatcherFilter.CommonFilter);
             var ImagePng = new Struct("png", "image/png", DispatcherFilter.ImageFilter);
             var ImageJpg = new Struct("jpg", "image/jpg", DispatcherFilter.ImageFilter);
             var ImageGif = new Struct("gif", "image/gif", DispatcherFilter.ImageFilter);
+            var ImageCur = new Struct("cur", "image/cur", DispatcherFilter.ImageFilter);
+            var ImageSvg = new Struct("svg", "text/xml", DispatcherFilter.ImageFilter);
 
+            Defines.Add(Define.Html, Html);
             Defines.Add(Define.Javascript, Javascript);
             Defines.Add(Define.ScriptMap, ScriptMap);
             Defines.Add(Define.Locale, Locale);
@@ -70,6 +75,8 @@ namespace EmilePlugins.Mvc.ModuleActivator
             Defines.Add(Define.ImagePng, ImagePng);
             Defines.Add(Define.ImageJpg, ImageJpg);
             Defines.Add(Define.ImageGif, ImageGif);
+            Defines.Add(Define.ImageCur, ImageCur);
+            Defines.Add(Define.ImageSvg, ImageSvg);
         }
 
     }
@@ -165,6 +172,7 @@ namespace EmilePlugins.Mvc.ModuleActivator
         {
             if (_Routes == null) throw new ArgumentNullException("RouteCollection");
             if (Enum.IsDefined(typeof(StaticResource.Define), style) == false) throw new ArgumentOutOfRangeException(nameof(style));
+            if (StaticResource.Defines.ContainsKey(style) == false) throw new ArgumentOutOfRangeException(nameof(style));
             var define = StaticResource.Defines[style];
             _Routes.Add(pathTemplate, new EmbeddedResourceDispatcher(define.ContentType, _Assembly, resourceName));
         }
@@ -174,6 +182,7 @@ namespace EmilePlugins.Mvc.ModuleActivator
             if (_Routes == null) throw new ArgumentNullException("RouteCollection");
             if (GetNamespace == null) throw new ArgumentNullException(nameof(GetNamespace));
             if (Enum.IsDefined(typeof(StaticResource.Define), style) == false) throw new ArgumentOutOfRangeException(nameof(style));
+            if (StaticResource.Defines.ContainsKey(style) == false) throw new ArgumentOutOfRangeException(nameof(style));
             var define = StaticResource.Defines[style];
             var baseNameSpace = GetNamespace();
             _Routes.Add(pathTemplate, new CombinedResourceDispatcher(define.ContentType, _Assembly, baseNameSpace, resourceNames));
@@ -181,11 +190,12 @@ namespace EmilePlugins.Mvc.ModuleActivator
 
         public void AddSamePathTypeResource([NotNull] string pathTemplate, [NotNull] StaticResource.Define style, [NotNull] Func<string> GetNamespace, ResourceFilter filter = null)
         {
-            if(Enum.IsDefined(typeof(StaticResource.Define), style)==false) throw new ArgumentOutOfRangeException(nameof(style));
+            if (Enum.IsDefined(typeof(StaticResource.Define), style) == false) throw new ArgumentOutOfRangeException(nameof(style));
+            if (StaticResource.Defines.ContainsKey(style) == false) throw new ArgumentOutOfRangeException(nameof(style));
             var define = StaticResource.Defines[style];
             if (_Resources == null) _Resources = _Assembly.GetManifestResourceNames();
             var baseNameSpace = GetNamespace();
-            var resourceNames = RemoveNameSpace(_Resources, baseNameSpace,define.Style);
+            var resourceNames = RemoveNameSpace(_Resources, baseNameSpace, define.Style);
             _Routes.Add(pathTemplate, new SamePathTypeResourceDispatcher(define.ContentType, define.Style, _Assembly, baseNameSpace, resourceNames, filter == null ? define.GetFilter() : filter));
         }
 

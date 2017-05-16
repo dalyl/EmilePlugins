@@ -1,8 +1,8 @@
 ﻿using Microsoft.Owin;
 using Owin;
 
-[assembly: OwinStartupAttribute(typeof(Web.Pdf.Preview.Startup))]
-namespace Web.Pdf.Preview
+[assembly: OwinStartupAttribute(typeof(Mvc.Module.PDFJS.Demo.Startup))]
+namespace Mvc.Module.PDFJS.Demo
 {
     public partial class Startup
     {

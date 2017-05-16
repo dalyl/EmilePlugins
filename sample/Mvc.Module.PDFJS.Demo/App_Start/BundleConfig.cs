@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace Web.Pdf.Preview
+namespace Mvc.Module.PDFJS.Demo
 {
     public class BundleConfig
     {

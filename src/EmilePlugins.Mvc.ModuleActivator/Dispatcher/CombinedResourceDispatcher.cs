@@ -29,10 +29,7 @@ namespace EmilePlugins.Mvc.ModuleActivator
         {
             foreach (var resourceName in _resourceNames)
             {
-                WriteResource(
-                    response,
-                    _assembly,
-                    $"{_baseNamespace}.{resourceName}");
+                WriteResource(response, $"{_baseNamespace}.{resourceName}");
             }
         }
     }

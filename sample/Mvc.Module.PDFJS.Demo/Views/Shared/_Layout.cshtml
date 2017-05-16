@@ -27,7 +27,7 @@
                     <li>@Html.ActionLink("联系方式", "Contact", "Home")</li>
                     <li>@Html.ActionLink("下载", "Down", "Home")</li>
                     <li>@Html.ActionLink("文件预览", "View", "pdf",new { file= "/Files/12-20170505-043723.pdf" },new { target= "_blank" })</li>
-                    <li>@Html.ActionLink("文件流预览", "Viewstream", "pdf", new { stream = "/Home/Down" }, new { target = "_blank" }))</li>
+                    <li>@Html.ActionLink("文件流预览", "View", "pdf", new { file = "/Home/Down" }, new { target = "_blank" }))</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>

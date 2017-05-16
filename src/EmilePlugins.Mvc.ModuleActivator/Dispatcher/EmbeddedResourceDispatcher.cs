@@ -43,21 +43,27 @@ namespace EmilePlugins.Mvc.ModuleActivator
 
         protected virtual void WriteResponse(DashboardRequest request, DashboardResponse response)
         {
-            WriteResource(response, _assembly, _resourceName);
+            WriteResource(response, _resourceName);
         }
 
-        protected void WriteResource(DashboardResponse response, Assembly assembly, string resourceName)
+        protected bool WriteResource(DashboardResponse response, string resourceName)
         {
-            if (assembly.GetManifestResourceInfo(resourceName) == null) return;
-            using (var inputStream = assembly.GetManifestResourceStream(resourceName))
+            if (_assembly.GetManifestResourceInfo(resourceName) == null) return WriteNotFound(response);
+            using (var inputStream = _assembly.GetManifestResourceStream(resourceName))
             {
-                if (inputStream == null)
-                {
-                    throw new ArgumentException($@"Resource with name {resourceName} not found in assembly {assembly}.");
-                }
-
                 inputStream.CopyTo(response.Body);
             }
+            return true;
+        }
+
+        public virtual bool WriteNotFound(DashboardResponse response)
+        {
+            var NotFoundRes = "Require resource not found in assembly.";
+            response.ContentType = "text/html";
+            response.SetExpire(DateTimeOffset.Now.AddHours(-1));
+            var data= Encoding.UTF8.GetBytes(NotFoundRes);
+            response.Body.Write(data, 0, data.Length);
+            return false;
         }
     }
 }

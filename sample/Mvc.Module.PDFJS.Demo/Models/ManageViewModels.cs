@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNet.Identity;
 using Microsoft.Owin.Security;
 
-namespace Web.Pdf.Preview.Models
+namespace Mvc.Module.PDFJS.Demo.Models
 {
     public class IndexViewModel
     {

@@ -32,20 +32,20 @@ namespace EmilePlugins.Mvc.Module.PDFJS.Pages
     #line hidden
     using System.Text;
     
-    #line 5 "..\..\Pages\Viewer.cshtml"
-    using EmilePlugins.Mvc.ModuleActivator;
-    
-    #line default
-    #line hidden
-    
     #line 7 "..\..\Pages\Viewer.cshtml"
-    using Mvc.Module.PDFJS;
+    using EmilePlugins.Mvc.Module.PDFJS;
     
     #line default
     #line hidden
     
     #line 6 "..\..\Pages\Viewer.cshtml"
-    using Mvc.Module.PDFJS.Pages;
+    using EmilePlugins.Mvc.Module.PDFJS.Pages;
+    
+    #line default
+    #line hidden
+    
+    #line 5 "..\..\Pages\Viewer.cshtml"
+    using EmilePlugins.Mvc.ModuleActivator;
     
     #line default
     #line hidden
@@ -138,316 +138,249 @@ WriteLiteral("\"></script>\r\n<script src=\"");
 
             
             #line 23 "..\..\Pages\Viewer.cshtml"
-        Write(Url.To($"/js/debugger"));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\"></script>\r\n<script src=\"");
-
-
-            
-            #line 24 "..\..\Pages\Viewer.cshtml"
         Write(Url.To($"/js/viewer"));
 
             
             #line default
             #line hidden
-WriteLiteral("\"></script>\r\n<script>\r\n      PDFJS.imageResourcesPath = \'/images/\';\r\n      PDFJS." +
-"workerSrc = \'/");
-
-
-            
-            #line 27 "..\..\Pages\Viewer.cshtml"
-                     Write(Resource.Setting.ModuleName);
-
-            
-            #line default
-            #line hidden
-WriteLiteral("/js/pdfworker\';\r\n      PDFJS.cMapUrl = \'/cmaps/\';\r\n      PDFJS.cMapPacked = true;" +
-"\r\n</script>\r\n\r\n<div id=\"outerContainer\">\r\n    <div id=\"sidebarContainer\">\r\n     " +
-"   <div id=\"toolbarSidebar\">\r\n            <div class=\"splitToolbarButton toggled" +
-"\">\r\n                <button id=\"viewThumbnail\" class=\"toolbarButton group toggle" +
-"d\" title=\"Show Thumbnails\" tabindex=\"2\" data-l10n-id=\"thumbs\">\r\n                " +
-"    <span data-l10n-id=\"thumbs_label\">Thumbnails</span>\r\n                </butto" +
-"n>\r\n                <button id=\"viewOutline\" class=\"toolbarButton group\" title=\"" +
-"Show Document Outline\" tabindex=\"3\" data-l10n-id=\"outline\">\r\n                   " +
-" <span data-l10n-id=\"outline_label\">Document Outline</span>\r\n                </b" +
-"utton>\r\n                <button id=\"viewAttachments\" class=\"toolbarButton group\"" +
-" title=\"Show Attachments\" tabindex=\"4\" data-l10n-id=\"attachments\">\r\n            " +
-"        <span data-l10n-id=\"attachments_label\">Attachments</span>\r\n             " +
-"   </button>\r\n            </div>\r\n        </div>\r\n        <div id=\"sidebarConten" +
-"t\">\r\n            <div id=\"thumbnailView\">\r\n            </div>\r\n            <div " +
-"id=\"outlineView\" class=\"hidden\">\r\n            </div>\r\n            <div id=\"attac" +
-"hmentsView\" class=\"hidden\">\r\n            </div>\r\n        </div>\r\n    </div>  <!-" +
-"- sidebarContainer -->\r\n    <div id=\"mainContainer\">\r\n\r\n        <div class=\"find" +
-"bar hidden doorHanger hiddenSmallView\" id=\"findbar\">\r\n            <label for=\"fi" +
-"ndInput\" class=\"toolbarLabel\" data-l10n-id=\"find_label\">Find:</label>\r\n         " +
-"   <input id=\"findInput\" class=\"toolbarField\" tabindex=\"91\">\r\n            <div c" +
-"lass=\"splitToolbarButton\">\r\n                <button class=\"toolbarButton findPre" +
-"vious\" title=\"\" id=\"findPrevious\" tabindex=\"92\" data-l10n-id=\"find_previous\">\r\n " +
-"                   <span data-l10n-id=\"find_previous_label\">Previous</span>\r\n   " +
-"             </button>\r\n                <div class=\"splitToolbarButtonSeparator\"" +
-"></div>\r\n                <button class=\"toolbarButton findNext\" title=\"\" id=\"fin" +
-"dNext\" tabindex=\"93\" data-l10n-id=\"find_next\">\r\n                    <span data-l" +
-"10n-id=\"find_next_label\">Next</span>\r\n                </button>\r\n            </d" +
-"iv>\r\n            <input type=\"checkbox\" id=\"findHighlightAll\" class=\"toolbarFiel" +
-"d\">\r\n            <label for=\"findHighlightAll\" class=\"toolbarLabel\" tabindex=\"94" +
-"\" data-l10n-id=\"find_highlight\">Highlight all</label>\r\n            <input type=\"" +
-"checkbox\" id=\"findMatchCase\" class=\"toolbarField\">\r\n            <label for=\"find" +
-"MatchCase\" class=\"toolbarLabel\" tabindex=\"95\" data-l10n-id=\"find_match_case_labe" +
-"l\">Match case</label>\r\n            <span id=\"findMsg\" class=\"toolbarLabel\"></spa" +
-"n>\r\n        </div>  <!-- findbar -->\r\n\r\n        <div id=\"secondaryToolbar\" class" +
-"=\"secondaryToolbar hidden doorHangerRight\">\r\n            <div id=\"secondaryToolb" +
-"arButtonContainer\">\r\n                <button id=\"secondaryPresentationMode\" clas" +
-"s=\"secondaryToolbarButton presentationMode visibleLargeView\" title=\"Switch to Pr" +
-"esentation Mode\" tabindex=\"51\" data-l10n-id=\"presentation_mode\">\r\n              " +
-"      <span data-l10n-id=\"presentation_mode_label\">Presentation Mode</span>\r\n   " +
-"             </button>\r\n                <button id=\"secondaryOpenFile\" class=\"se" +
-"condaryToolbarButton openFile visibleLargeView\" title=\"Open File\" tabindex=\"52\" " +
-"data-l10n-id=\"open_file\">\r\n                    <span data-l10n-id=\"open_file_lab" +
-"el\">Open</span>\r\n                </button>\r\n                <button id=\"secondar" +
-"yPrint\" class=\"secondaryToolbarButton print visibleMediumView\" title=\"Print\" tab" +
-"index=\"53\" data-l10n-id=\"print\">\r\n                    <span data-l10n-id=\"print_" +
-"label\">Print</span>\r\n                </button>\r\n                <button id=\"seco" +
-"ndaryDownload\" class=\"secondaryToolbarButton download visibleMediumView\" title=\"" +
-"Download\" tabindex=\"54\" data-l10n-id=\"download\">\r\n                    <span data" +
-"-l10n-id=\"download_label\">Download</span>\r\n                </button>\r\n          " +
-"      <a href=\"#\" id=\"secondaryViewBookmark\" class=\"secondaryToolbarButton bookm" +
-"ark visibleSmallView\" title=\"Current view (copy or open in new window)\" tabindex" +
-"=\"55\" data-l10n-id=\"bookmark\">\r\n                    <span data-l10n-id=\"bookmark" +
-"_label\">Current View</span>\r\n                </a>\r\n                <div class=\"h" +
-"orizontalToolbarSeparator visibleLargeView\"></div>\r\n                <button id=\"" +
-"firstPage\" class=\"secondaryToolbarButton firstPage\" title=\"Go to First Page\" tab" +
-"index=\"56\" data-l10n-id=\"first_page\">\r\n                    <span data-l10n-id=\"f" +
-"irst_page_label\">Go to First Page</span>\r\n                </button>\r\n           " +
-"     <button id=\"lastPage\" class=\"secondaryToolbarButton lastPage\" title=\"Go to " +
-"Last Page\" tabindex=\"57\" data-l10n-id=\"last_page\">\r\n                    <span da" +
-"ta-l10n-id=\"last_page_label\">Go to Last Page</span>\r\n                </button>\r\n" +
-"                <div class=\"horizontalToolbarSeparator\"></div>\r\n                " +
-"<button id=\"pageRotateCw\" class=\"secondaryToolbarButton rotateCw\" title=\"Rotate " +
-"Clockwise\" tabindex=\"58\" data-l10n-id=\"page_rotate_cw\">\r\n                    <sp" +
-"an data-l10n-id=\"page_rotate_cw_label\">Rotate Clockwise</span>\r\n                " +
-"</button>\r\n                <button id=\"pageRotateCcw\" class=\"secondaryToolbarBut" +
-"ton rotateCcw\" title=\"Rotate Counterclockwise\" tabindex=\"59\" data-l10n-id=\"page_" +
-"rotate_ccw\">\r\n                    <span data-l10n-id=\"page_rotate_ccw_label\">Rot" +
-"ate Counterclockwise</span>\r\n                </button>\r\n                <div cla" +
-"ss=\"horizontalToolbarSeparator\"></div>\r\n                <button id=\"toggleHandTo" +
-"ol\" class=\"secondaryToolbarButton handTool\" title=\"Enable hand tool\" tabindex=\"6" +
-"0\" data-l10n-id=\"hand_tool_enable\">\r\n                    <span data-l10n-id=\"han" +
-"d_tool_enable_label\">Enable hand tool</span>\r\n                </button>\r\n\r\n     " +
-"           <div class=\"horizontalToolbarSeparator\"></div>\r\n                <butt" +
-"on id=\"documentProperties\" class=\"secondaryToolbarButton documentProperties\" tit" +
-"le=\"Document Properties…\" tabindex=\"61\" data-l10n-id=\"document_properties\">\r\n   " +
-"                 <span data-l10n-id=\"document_properties_label\">Document Propert" +
-"ies…</span>\r\n                </button>\r\n            </div>\r\n        </div>  <!--" +
-" secondaryToolbar -->\r\n\r\n        <div class=\"toolbar\">\r\n            <div id=\"too" +
-"lbarContainer\">\r\n                <div id=\"toolbarViewer\">\r\n                    <" +
-"div id=\"toolbarViewerLeft\">\r\n                        <button id=\"sidebarToggle\" " +
-"class=\"toolbarButton\" title=\"Toggle Sidebar\" tabindex=\"11\" data-l10n-id=\"toggle_" +
-"sidebar\">\r\n                            <span data-l10n-id=\"toggle_sidebar_label\"" +
-">Toggle Sidebar</span>\r\n                        </button>\r\n                     " +
-"   <div class=\"toolbarButtonSpacer\"></div>\r\n                        <button id=\"" +
-"viewFind\" class=\"toolbarButton group hiddenSmallView\" title=\"Find in Document\" t" +
-"abindex=\"12\" data-l10n-id=\"findbar\">\r\n                            <span data-l10" +
-"n-id=\"findbar_label\">Find</span>\r\n                        </button>\r\n           " +
-"             <div class=\"splitToolbarButton\">\r\n                            <butt" +
-"on class=\"toolbarButton pageUp\" title=\"Previous Page\" id=\"previous\" tabindex=\"13" +
-"\" data-l10n-id=\"previous\">\r\n                                <span data-l10n-id=\"" +
-"previous_label\">Previous</span>\r\n                            </button>\r\n        " +
-"                    <div class=\"splitToolbarButtonSeparator\"></div>\r\n           " +
-"                 <button class=\"toolbarButton pageDown\" title=\"Next Page\" id=\"ne" +
-"xt\" tabindex=\"14\" data-l10n-id=\"next\">\r\n                                <span da" +
-"ta-l10n-id=\"next_label\">Next</span>\r\n                            </button>\r\n    " +
-"                    </div>\r\n                        <label id=\"pageNumberLabel\" " +
-"class=\"toolbarLabel\" for=\"pageNumber\" data-l10n-id=\"page_label\">Page: </label>\r\n" +
-"                        <input type=\"number\" id=\"pageNumber\" class=\"toolbarField" +
-" pageNumber\" value=\"1\" size=\"4\" min=\"1\" tabindex=\"15\">\r\n                        " +
-"<span id=\"numPages\" class=\"toolbarLabel\"></span>\r\n                    </div>\r\n\r\n" +
-"                    <div id=\"toolbarViewerRight\">\r\n                        <butt" +
-"on id=\"presentationMode\" class=\"toolbarButton presentationMode hiddenLargeView\" " +
-"title=\"Switch to Presentation Mode\" tabindex=\"31\" data-l10n-id=\"presentation_mod" +
-"e\">\r\n                            <span data-l10n-id=\"presentation_mode_label\">Pr" +
-"esentation Mode</span>\r\n                        </button>\r\n                     " +
-"   <button id=\"openFile\" class=\"toolbarButton openFile hiddenLargeView\" title=\"O" +
-"pen File\" tabindex=\"32\" data-l10n-id=\"open_file\">\r\n                            <" +
-"span data-l10n-id=\"open_file_label\">Open</span>\r\n                        </butto" +
-"n>\r\n                        <button id=\"print\" class=\"toolbarButton print hidden" +
-"MediumView\" title=\"Print\" tabindex=\"33\" data-l10n-id=\"print\">\r\n                 " +
-"           <span data-l10n-id=\"print_label\">Print</span>\r\n                      " +
-"  </button>\r\n                        <button id=\"download\" class=\"toolbarButton " +
-"download hiddenMediumView\" title=\"Download\" tabindex=\"34\" data-l10n-id=\"download" +
-"\">\r\n                            <span data-l10n-id=\"download_label\">Download</sp" +
-"an>\r\n                        </button>\r\n                        <!-- <div class=" +
-"\"toolbarButtonSpacer\"></div> -->\r\n                        <a href=\"#\" id=\"viewBo" +
-"okmark\" class=\"toolbarButton bookmark hiddenSmallView\" title=\"Current view (copy" +
-" or open in new window)\" tabindex=\"35\" data-l10n-id=\"bookmark\">\r\n               " +
-"             <span data-l10n-id=\"bookmark_label\">Current View</span>\r\n          " +
-"              </a>\r\n                        <div class=\"verticalToolbarSeparator" +
-" hiddenSmallView\"></div>\r\n\r\n                        <button id=\"secondaryToolbar" +
-"Toggle\" class=\"toolbarButton\" title=\"Tools\" tabindex=\"36\" data-l10n-id=\"tools\">\r" +
-"\n                            <span data-l10n-id=\"tools_label\">Tools</span>\r\n    " +
-"                    </button>\r\n                    </div>\r\n\r\n                   " +
-" <div class=\"outerCenter\">\r\n                        <div class=\"innerCenter\" id=" +
-"\"toolbarViewerMiddle\">\r\n                            <div class=\"splitToolbarButt" +
-"on\">\r\n                                <button id=\"zoomOut\" class=\"toolbarButton " +
-"zoomOut\" title=\"Zoom Out\" tabindex=\"21\" data-l10n-id=\"zoom_out\">\r\n              " +
-"                      <span data-l10n-id=\"zoom_out_label\">Zoom Out</span>\r\n     " +
-"                           </button>\r\n                                <div class" +
-"=\"splitToolbarButtonSeparator\"></div>\r\n                                <button i" +
-"d=\"zoomIn\" class=\"toolbarButton zoomIn\" title=\"Zoom In\" tabindex=\"22\" data-l10n-" +
-"id=\"zoom_in\">\r\n                                    <span data-l10n-id=\"zoom_in_l" +
-"abel\">Zoom In</span>\r\n                                </button>\r\n               " +
-"             </div>\r\n                            <span id=\"scaleSelectContainer\"" +
-" class=\"dropdownToolbarButton\">\r\n                                <select id=\"sca" +
-"leSelect\" title=\"Zoom\" tabindex=\"23\" data-l10n-id=\"zoom\">\r\n                     " +
-"               <option id=\"pageAutoOption\" title=\"\" value=\"auto\" selected=\"selec" +
-"ted\" data-l10n-id=\"page_scale_auto\">Automatic Zoom</option>\r\n                   " +
-"                 <option id=\"pageActualOption\" title=\"\" value=\"page-actual\" data" +
-"-l10n-id=\"page_scale_actual\">Actual Size</option>\r\n                             " +
-"       <option id=\"pageFitOption\" title=\"\" value=\"page-fit\" data-l10n-id=\"page_s" +
-"cale_fit\">Fit Page</option>\r\n                                    <option id=\"pag" +
-"eWidthOption\" title=\"\" value=\"page-width\" data-l10n-id=\"page_scale_width\">Full W" +
-"idth</option>\r\n                                    <option id=\"customScaleOption" +
-"\" title=\"\" value=\"custom\"></option>\r\n                                    <option" +
-" title=\"\" value=\"0.5\">50%</option>\r\n                                    <option " +
-"title=\"\" value=\"0.75\">75%</option>\r\n                                    <option " +
-"title=\"\" value=\"1\">100%</option>\r\n                                    <option ti" +
-"tle=\"\" value=\"1.25\">125%</option>\r\n                                    <option t" +
-"itle=\"\" value=\"1.5\">150%</option>\r\n                                    <option t" +
-"itle=\"\" value=\"2\">200%</option>\r\n                                    <option tit" +
-"le=\"\" value=\"3\">300%</option>\r\n                                    <option title" +
-"=\"\" value=\"4\">400%</option>\r\n                                </select>\r\n        " +
-"                    </span>\r\n                        </div>\r\n                   " +
-" </div>\r\n\r\n                </div>\r\n                <div id=\"loadingBar\">\r\n      " +
-"              <div class=\"progress\">\r\n                        <div class=\"glimme" +
-"r\">\r\n                        </div>\r\n                    </div>\r\n               " +
-" </div>\r\n            </div>\r\n        </div>\r\n\r\n        <menu type=\"context\" id=\"" +
-"viewerContextMenu\">\r\n            <menuitem id=\"contextFirstPage\" label=\"First Pa" +
-"ge\"\r\n                      data-l10n-id=\"first_page\"></menuitem>\r\n            <m" +
-"enuitem id=\"contextLastPage\" label=\"Last Page\"\r\n                      data-l10n-" +
-"id=\"last_page\"></menuitem>\r\n            <menuitem id=\"contextPageRotateCw\" label" +
-"=\"Rotate Clockwise\"\r\n                      data-l10n-id=\"page_rotate_cw\"></menui" +
-"tem>\r\n            <menuitem id=\"contextPageRotateCcw\" label=\"Rotate Counter-Cloc" +
-"kwise\"\r\n                      data-l10n-id=\"page_rotate_ccw\"></menuitem>\r\n      " +
-"  </menu>\r\n\r\n        <div id=\"viewerContainer\" tabindex=\"0\">\r\n            <div i" +
-"d=\"viewer\"></div>\r\n        </div>\r\n\r\n        <div id=\"errorWrapper\" hidden=\'true" +
-"\'>\r\n            <div id=\"errorMessageLeft\">\r\n                <span id=\"errorMess" +
-"age\"></span>\r\n                <button id=\"errorShowMore\" data-l10n-id=\"error_mor" +
-"e_info\">\r\n                    More Information\r\n                </button>\r\n     " +
-"           <button id=\"errorShowLess\" data-l10n-id=\"error_less_info\" hidden=\'tru" +
-"e\'>\r\n                    Less Information\r\n                </button>\r\n          " +
-"  </div>\r\n            <div id=\"errorMessageRight\">\r\n                <button id=\"" +
-"errorClose\" data-l10n-id=\"error_close\">\r\n                    Close\r\n            " +
-"    </button>\r\n            </div>\r\n            <div class=\"clearBoth\"></div>\r\n  " +
-"          <textarea id=\"errorMoreInfo\" hidden=\'true\' readonly=\"readonly\"></texta" +
-"rea>\r\n        </div>\r\n    </div> <!-- mainContainer -->\r\n\r\n    <div id=\"overlayC" +
-"ontainer\" class=\"hidden\">\r\n        <div id=\"passwordOverlay\" class=\"container hi" +
-"dden\">\r\n            <div class=\"dialog\">\r\n                <div class=\"row\">\r\n   " +
-"                 <p id=\"passwordText\" data-l10n-id=\"password_label\">Enter the pa" +
-"ssword to open this PDF file:</p>\r\n                </div>\r\n                <div " +
-"class=\"row\">\r\n                    <input type=\"password\" id=\"password\" class=\"to" +
-"olbarField\" />\r\n                </div>\r\n                <div class=\"buttonRow\">\r" +
-"\n                    <button id=\"passwordCancel\" class=\"overlayButton\"><span dat" +
-"a-l10n-id=\"password_cancel\">Cancel</span></button>\r\n                    <button " +
-"id=\"passwordSubmit\" class=\"overlayButton\"><span data-l10n-id=\"password_ok\">OK</s" +
-"pan></button>\r\n                </div>\r\n            </div>\r\n        </div>\r\n\r\n   " +
-"     <div id=\"documentPropertiesOverlay\" class=\"container hidden\">\r\n            " +
-"<div class=\"dialog\">\r\n                <div class=\"row\">\r\n                    <sp" +
-"an data-l10n-id=\"document_properties_file_name\">File name:</span> <p id=\"fileNam" +
-"eField\">-</p>\r\n                </div>\r\n                <div class=\"row\">\r\n      " +
-"              <span data-l10n-id=\"document_properties_file_size\">File size:</spa" +
-"n> <p id=\"fileSizeField\">-</p>\r\n                </div>\r\n                <div cla" +
-"ss=\"separator\"></div>\r\n                <div class=\"row\">\r\n                    <s" +
-"pan data-l10n-id=\"document_properties_title\">Title:</span> <p id=\"titleField\">-<" +
-"/p>\r\n                </div>\r\n                <div class=\"row\">\r\n                " +
-"    <span data-l10n-id=\"document_properties_author\">Author:</span> <p id=\"author" +
-"Field\">-</p>\r\n                </div>\r\n                <div class=\"row\">\r\n       " +
-"             <span data-l10n-id=\"document_properties_subject\">Subject:</span> <p" +
-" id=\"subjectField\">-</p>\r\n                </div>\r\n                <div class=\"ro" +
-"w\">\r\n                    <span data-l10n-id=\"document_properties_keywords\">Keywo" +
-"rds:</span> <p id=\"keywordsField\">-</p>\r\n                </div>\r\n               " +
-" <div class=\"row\">\r\n                    <span data-l10n-id=\"document_properties_" +
-"creation_date\">Creation Date:</span> <p id=\"creationDateField\">-</p>\r\n          " +
+WriteLiteral("\"></script>\r\n\r\n<div id=\"outerContainer\">\r\n    <div id=\"sidebarContainer\">\r\n      " +
+"  <div id=\"toolbarSidebar\">\r\n            <div class=\"splitToolbarButton toggled\"" +
+">\r\n                <button id=\"viewThumbnail\" class=\"toolbarButton toggled\" titl" +
+"e=\"Show Thumbnails\" tabindex=\"2\" data-l10n-id=\"thumbs\">\r\n                    <sp" +
+"an data-l10n-id=\"thumbs_label\">Thumbnails</span>\r\n                </button>\r\n   " +
+"             <button id=\"viewOutline\" class=\"toolbarButton\" title=\"Show Document" +
+" Outline (double-click to expand/collapse all items)\" tabindex=\"3\" data-l10n-id=" +
+"\"document_outline\">\r\n                    <span data-l10n-id=\"document_outline_la" +
+"bel\">Document Outline</span>\r\n                </button>\r\n                <button" +
+" id=\"viewAttachments\" class=\"toolbarButton\" title=\"Show Attachments\" tabindex=\"4" +
+"\" data-l10n-id=\"attachments\">\r\n                    <span data-l10n-id=\"attachmen" +
+"ts_label\">Attachments</span>\r\n                </button>\r\n            </div>\r\n   " +
+"     </div>\r\n        <div id=\"sidebarContent\">\r\n            <div id=\"thumbnailVi" +
+"ew\">\r\n            </div>\r\n            <div id=\"outlineView\" class=\"hidden\">\r\n   " +
+"         </div>\r\n            <div id=\"attachmentsView\" class=\"hidden\">\r\n        " +
+"    </div>\r\n        </div>\r\n    </div>  <!-- sidebarContainer -->\r\n    <div id=\"" +
+"mainContainer\">\r\n        <div class=\"findbar hidden doorHanger\" id=\"findbar\">\r\n " +
+"           <div id=\"findbarInputContainer\">\r\n                <input id=\"findInpu" +
+"t\" class=\"toolbarField\" title=\"Find\" placeholder=\"Find in document…\" tabindex=\"9" +
+"1\" data-l10n-id=\"find_input\">\r\n                <div class=\"splitToolbarButton\">\r" +
+"\n                    <button id=\"findPrevious\" class=\"toolbarButton findPrevious" +
+"\" title=\"Find the previous occurrence of the phrase\" tabindex=\"92\" data-l10n-id=" +
+"\"find_previous\">\r\n                        <span data-l10n-id=\"find_previous_labe" +
+"l\">Previous</span>\r\n                    </button>\r\n                    <div clas" +
+"s=\"splitToolbarButtonSeparator\"></div>\r\n                    <button id=\"findNext" +
+"\" class=\"toolbarButton findNext\" title=\"Find the next occurrence of the phrase\" " +
+"tabindex=\"93\" data-l10n-id=\"find_next\">\r\n                        <span data-l10n" +
+"-id=\"find_next_label\">Next</span>\r\n                    </button>\r\n              " +
+"  </div>\r\n            </div>\r\n            <div id=\"findbarOptionsContainer\">\r\n  " +
+"              <input type=\"checkbox\" id=\"findHighlightAll\" class=\"toolbarField\" " +
+"tabindex=\"94\">\r\n                <label for=\"findHighlightAll\" class=\"toolbarLabe" +
+"l\" data-l10n-id=\"find_highlight\">Highlight all</label>\r\n                <input t" +
+"ype=\"checkbox\" id=\"findMatchCase\" class=\"toolbarField\" tabindex=\"95\">\r\n         " +
+"       <label for=\"findMatchCase\" class=\"toolbarLabel\" data-l10n-id=\"find_match_" +
+"case_label\">Match case</label>\r\n                <span id=\"findResultsCount\" clas" +
+"s=\"toolbarLabel hidden\"></span>\r\n            </div>\r\n            <div id=\"findba" +
+"rMessageContainer\">\r\n                <span id=\"findMsg\" class=\"toolbarLabel\"></s" +
+"pan>\r\n            </div>\r\n        </div>  <!-- findbar -->\r\n        <div id=\"sec" +
+"ondaryToolbar\" class=\"secondaryToolbar hidden doorHangerRight\">\r\n            <di" +
+"v id=\"secondaryToolbarButtonContainer\">\r\n                <button id=\"secondaryPr" +
+"esentationMode\" class=\"secondaryToolbarButton presentationMode visibleLargeView\"" +
+" title=\"Switch to Presentation Mode\" tabindex=\"51\" data-l10n-id=\"presentation_mo" +
+"de\">\r\n                    <span data-l10n-id=\"presentation_mode_label\">Presentat" +
+"ion Mode</span>\r\n                </button>\r\n                <button id=\"secondar" +
+"yOpenFile\" class=\"secondaryToolbarButton openFile visibleLargeView\" title=\"Open " +
+"File\" tabindex=\"52\" data-l10n-id=\"open_file\">\r\n                    <span data-l1" +
+"0n-id=\"open_file_label\">Open</span>\r\n                </button>\r\n                " +
+"<button id=\"secondaryPrint\" class=\"secondaryToolbarButton print visibleMediumVie" +
+"w\" title=\"Print\" tabindex=\"53\" data-l10n-id=\"print\">\r\n                    <span " +
+"data-l10n-id=\"print_label\">Print</span>\r\n                </button>\r\n            " +
+"    <button id=\"secondaryDownload\" class=\"secondaryToolbarButton download visibl" +
+"eMediumView\" title=\"Download\" tabindex=\"54\" data-l10n-id=\"download\">\r\n          " +
+"          <span data-l10n-id=\"download_label\">Download</span>\r\n                <" +
+"/button>\r\n                <a href=\"#\" id=\"secondaryViewBookmark\" class=\"secondar" +
+"yToolbarButton bookmark visibleSmallView\" title=\"Current view (copy or open in n" +
+"ew window)\" tabindex=\"55\" data-l10n-id=\"bookmark\">\r\n                    <span da" +
+"ta-l10n-id=\"bookmark_label\">Current View</span>\r\n                </a>\r\n         " +
+"       <div class=\"horizontalToolbarSeparator visibleLargeView\"></div>\r\n        " +
+"        <button id=\"firstPage\" class=\"secondaryToolbarButton firstPage\" title=\"G" +
+"o to First Page\" tabindex=\"56\" data-l10n-id=\"first_page\">\r\n                    <" +
+"span data-l10n-id=\"first_page_label\">Go to First Page</span>\r\n                </" +
+"button>\r\n                <button id=\"lastPage\" class=\"secondaryToolbarButton las" +
+"tPage\" title=\"Go to Last Page\" tabindex=\"57\" data-l10n-id=\"last_page\">\r\n        " +
+"            <span data-l10n-id=\"last_page_label\">Go to Last Page</span>\r\n       " +
+"         </button>\r\n                <div class=\"horizontalToolbarSeparator\"></di" +
+"v>\r\n                <button id=\"pageRotateCw\" class=\"secondaryToolbarButton rota" +
+"teCw\" title=\"Rotate Clockwise\" tabindex=\"58\" data-l10n-id=\"page_rotate_cw\">\r\n   " +
+"                 <span data-l10n-id=\"page_rotate_cw_label\">Rotate Clockwise</spa" +
+"n>\r\n                </button>\r\n                <button id=\"pageRotateCcw\" class=" +
+"\"secondaryToolbarButton rotateCcw\" title=\"Rotate Counterclockwise\" tabindex=\"59\"" +
+" data-l10n-id=\"page_rotate_ccw\">\r\n                    <span data-l10n-id=\"page_r" +
+"otate_ccw_label\">Rotate Counterclockwise</span>\r\n                </button>\r\n    " +
+"            <div class=\"horizontalToolbarSeparator\"></div>\r\n                <but" +
+"ton id=\"toggleHandTool\" class=\"secondaryToolbarButton handTool\" title=\"Enable ha" +
+"nd tool\" tabindex=\"60\" data-l10n-id=\"hand_tool_enable\">\r\n                    <sp" +
+"an data-l10n-id=\"hand_tool_enable_label\">Enable hand tool</span>\r\n              " +
+"  </button>\r\n                <div class=\"horizontalToolbarSeparator\"></div>\r\n   " +
+"             <button id=\"documentProperties\" class=\"secondaryToolbarButton docum" +
+"entProperties\" title=\"Document Properties…\" tabindex=\"61\" data-l10n-id=\"document" +
+"_properties\">\r\n                    <span data-l10n-id=\"document_properties_label" +
+"\">Document Properties…</span>\r\n                </button>\r\n            </div>\r\n  " +
+"      </div>  <!-- secondaryToolbar -->\r\n        <div class=\"toolbar\">\r\n        " +
+"    <div id=\"toolbarContainer\">\r\n                <div id=\"toolbarViewer\">\r\n     " +
+"               <div id=\"toolbarViewerLeft\">\r\n                        <button id=" +
+"\"sidebarToggle\" class=\"toolbarButton\" title=\"Toggle Sidebar\" tabindex=\"11\" data-" +
+"l10n-id=\"toggle_sidebar\">\r\n                            <span data-l10n-id=\"toggl" +
+"e_sidebar_label\">Toggle Sidebar</span>\r\n                        </button>\r\n     " +
+"                   <div class=\"toolbarButtonSpacer\"></div>\r\n                    " +
+"    <button id=\"viewFind\" class=\"toolbarButton\" title=\"Find in Document\" tabinde" +
+"x=\"12\" data-l10n-id=\"findbar\">\r\n                            <span data-l10n-id=\"" +
+"findbar_label\">Find</span>\r\n                        </button>\r\n                 " +
+"       <div class=\"splitToolbarButton hiddenSmallView\">\r\n                       " +
+"     <button class=\"toolbarButton pageUp\" title=\"Previous Page\" id=\"previous\" ta" +
+"bindex=\"13\" data-l10n-id=\"previous\">\r\n                                <span data" +
+"-l10n-id=\"previous_label\">Previous</span>\r\n                            </button>" +
+"\r\n                            <div class=\"splitToolbarButtonSeparator\"></div>\r\n " +
+"                           <button class=\"toolbarButton pageDown\" title=\"Next Pa" +
+"ge\" id=\"next\" tabindex=\"14\" data-l10n-id=\"next\">\r\n                              " +
+"  <span data-l10n-id=\"next_label\">Next</span>\r\n                            </but" +
+"ton>\r\n                        </div>\r\n                        <input type=\"numbe" +
+"r\" id=\"pageNumber\" class=\"toolbarField pageNumber\" title=\"Page\" value=\"1\" size=\"" +
+"4\" min=\"1\" tabindex=\"15\" data-l10n-id=\"page\">\r\n                        <span id=" +
+"\"numPages\" class=\"toolbarLabel\"></span>\r\n                    </div>\r\n           " +
+"         <div id=\"toolbarViewerRight\">\r\n                        <button id=\"pres" +
+"entationMode\" class=\"toolbarButton presentationMode hiddenLargeView\" title=\"Swit" +
+"ch to Presentation Mode\" tabindex=\"31\" data-l10n-id=\"presentation_mode\">\r\n      " +
+"                      <span data-l10n-id=\"presentation_mode_label\">Presentation " +
+"Mode</span>\r\n                        </button>\r\n                        <button " +
+"id=\"openFile\" class=\"toolbarButton openFile hiddenLargeView\" title=\"Open File\" t" +
+"abindex=\"32\" data-l10n-id=\"open_file\">\r\n                            <span data-l" +
+"10n-id=\"open_file_label\">Open</span>\r\n                        </button>\r\n       " +
+"                 <button id=\"print\" class=\"toolbarButton print hiddenMediumView\"" +
+" title=\"Print\" tabindex=\"33\" data-l10n-id=\"print\">\r\n                            " +
+"<span data-l10n-id=\"print_label\">Print</span>\r\n                        </button>" +
+"\r\n                        <button id=\"download\" class=\"toolbarButton download hi" +
+"ddenMediumView\" title=\"Download\" tabindex=\"34\" data-l10n-id=\"download\">\r\n       " +
+"                     <span data-l10n-id=\"download_label\">Download</span>\r\n      " +
+"                  </button>\r\n                        <a href=\"#\" id=\"viewBookmar" +
+"k\" class=\"toolbarButton bookmark hiddenSmallView\" title=\"Current view (copy or o" +
+"pen in new window)\" tabindex=\"35\" data-l10n-id=\"bookmark\">\r\n                    " +
+"        <span data-l10n-id=\"bookmark_label\">Current View</span>\r\n               " +
+"         </a>\r\n                        <div class=\"verticalToolbarSeparator hidd" +
+"enSmallView\"></div>\r\n                        <button id=\"secondaryToolbarToggle\"" +
+" class=\"toolbarButton\" title=\"Tools\" tabindex=\"36\" data-l10n-id=\"tools\">\r\n      " +
+"                      <span data-l10n-id=\"tools_label\">Tools</span>\r\n           " +
+"             </button>\r\n                    </div>\r\n                    <div id=" +
+"\"toolbarViewerMiddle\">\r\n                        <div class=\"splitToolbarButton\">" +
+"\r\n                            <button id=\"zoomOut\" class=\"toolbarButton zoomOut\"" +
+" title=\"Zoom Out\" tabindex=\"21\" data-l10n-id=\"zoom_out\">\r\n                      " +
+"          <span data-l10n-id=\"zoom_out_label\">Zoom Out</span>\r\n                 " +
+"           </button>\r\n                            <div class=\"splitToolbarButton" +
+"Separator\"></div>\r\n                            <button id=\"zoomIn\" class=\"toolba" +
+"rButton zoomIn\" title=\"Zoom In\" tabindex=\"22\" data-l10n-id=\"zoom_in\">\r\n         " +
+"                       <span data-l10n-id=\"zoom_in_label\">Zoom In</span>\r\n      " +
+"                      </button>\r\n                        </div>\r\n               " +
+"         <span id=\"scaleSelectContainer\" class=\"dropdownToolbarButton\">\r\n       " +
+"                     <select id=\"scaleSelect\" title=\"Zoom\" tabindex=\"23\" data-l1" +
+"0n-id=\"zoom\">\r\n                                <option id=\"pageAutoOption\" title" +
+"=\"\" value=\"auto\" selected=\"selected\" data-l10n-id=\"page_scale_auto\">Automatic Zo" +
+"om</option>\r\n                                <option id=\"pageActualOption\" title" +
+"=\"\" value=\"page-actual\" data-l10n-id=\"page_scale_actual\">Actual Size</option>\r\n " +
+"                               <option id=\"pageFitOption\" title=\"\" value=\"page-f" +
+"it\" data-l10n-id=\"page_scale_fit\">Fit Page</option>\r\n                           " +
+"     <option id=\"pageWidthOption\" title=\"\" value=\"page-width\" data-l10n-id=\"page" +
+"_scale_width\">Full Width</option>\r\n                                <option id=\"c" +
+"ustomScaleOption\" title=\"\" value=\"custom\" disabled=\"disabled\" hidden=\"true\"></op" +
+"tion>\r\n                                <option title=\"\" value=\"0.5\" data-l10n-id" +
+"=\"page_scale_percent\" data-l10n-args=\'{ \"scale\": 50 }\'>50%</option>\r\n           " +
+"                     <option title=\"\" value=\"0.75\" data-l10n-id=\"page_scale_perc" +
+"ent\" data-l10n-args=\'{ \"scale\": 75 }\'>75%</option>\r\n                            " +
+"    <option title=\"\" value=\"1\" data-l10n-id=\"page_scale_percent\" data-l10n-args=" +
+"\'{ \"scale\": 100 }\'>100%</option>\r\n                                <option title=" +
+"\"\" value=\"1.25\" data-l10n-id=\"page_scale_percent\" data-l10n-args=\'{ \"scale\": 125" +
+" }\'>125%</option>\r\n                                <option title=\"\" value=\"1.5\" " +
+"data-l10n-id=\"page_scale_percent\" data-l10n-args=\'{ \"scale\": 150 }\'>150%</option" +
+">\r\n                                <option title=\"\" value=\"2\" data-l10n-id=\"page" +
+"_scale_percent\" data-l10n-args=\'{ \"scale\": 200 }\'>200%</option>\r\n               " +
+"                 <option title=\"\" value=\"3\" data-l10n-id=\"page_scale_percent\" da" +
+"ta-l10n-args=\'{ \"scale\": 300 }\'>300%</option>\r\n                                <" +
+"option title=\"\" value=\"4\" data-l10n-id=\"page_scale_percent\" data-l10n-args=\'{ \"s" +
+"cale\": 400 }\'>400%</option>\r\n                            </select>\r\n            " +
+"            </span>\r\n                    </div>\r\n                </div>\r\n       " +
+"         <div id=\"loadingBar\">\r\n                    <div class=\"progress\">\r\n    " +
+"                    <div class=\"glimmer\">\r\n                        </div>\r\n     " +
+"               </div>\r\n                </div>\r\n            </div>\r\n        </div" +
+">\r\n        <menu type=\"context\" id=\"viewerContextMenu\">\r\n            <menuitem i" +
+"d=\"contextFirstPage\" label=\"First Page\"\r\n                      data-l10n-id=\"fir" +
+"st_page\"></menuitem>\r\n            <menuitem id=\"contextLastPage\" label=\"Last Pag" +
+"e\"\r\n                      data-l10n-id=\"last_page\"></menuitem>\r\n            <men" +
+"uitem id=\"contextPageRotateCw\" label=\"Rotate Clockwise\"\r\n                      d" +
+"ata-l10n-id=\"page_rotate_cw\"></menuitem>\r\n            <menuitem id=\"contextPageR" +
+"otateCcw\" label=\"Rotate Counter-Clockwise\"\r\n                      data-l10n-id=\"" +
+"page_rotate_ccw\"></menuitem>\r\n        </menu>\r\n        <div id=\"viewerContainer\"" +
+" tabindex=\"0\">\r\n            <div id=\"viewer\" class=\"pdfViewer\"></div>\r\n        <" +
+"/div>\r\n        <div id=\"errorWrapper\" hidden=\'true\'>\r\n            <div id=\"error" +
+"MessageLeft\">\r\n                <span id=\"errorMessage\"></span>\r\n                " +
+"<button id=\"errorShowMore\" data-l10n-id=\"error_more_info\">\r\n                    " +
+"More Information\r\n                </button>\r\n                <button id=\"errorSh" +
+"owLess\" data-l10n-id=\"error_less_info\" hidden=\'true\'>\r\n                    Less " +
+"Information\r\n                </button>\r\n            </div>\r\n            <div id=" +
+"\"errorMessageRight\">\r\n                <button id=\"errorClose\" data-l10n-id=\"erro" +
+"r_close\">\r\n                    Close\r\n                </button>\r\n            </d" +
+"iv>\r\n            <div class=\"clearBoth\"></div>\r\n            <textarea id=\"errorM" +
+"oreInfo\" hidden=\'true\' readonly=\"readonly\"></textarea>\r\n        </div>\r\n    </di" +
+"v> <!-- mainContainer -->\r\n    <div id=\"overlayContainer\" class=\"hidden\">\r\n     " +
+"   <div id=\"passwordOverlay\" class=\"container hidden\">\r\n            <div class=\"" +
+"dialog\">\r\n                <div class=\"row\">\r\n                    <p id=\"password" +
+"Text\" data-l10n-id=\"password_label\">Enter the password to open this PDF file:</p" +
+">\r\n                </div>\r\n                <div class=\"row\">\r\n                  " +
+"  <input type=\"password\" id=\"password\" class=\"toolbarField\">\r\n                </" +
+"div>\r\n                <div class=\"buttonRow\">\r\n                    <button id=\"p" +
+"asswordCancel\" class=\"overlayButton\"><span data-l10n-id=\"password_cancel\">Cancel" +
+"</span></button>\r\n                    <button id=\"passwordSubmit\" class=\"overlay" +
+"Button\"><span data-l10n-id=\"password_ok\">OK</span></button>\r\n                </d" +
+"iv>\r\n            </div>\r\n        </div>\r\n        <div id=\"documentPropertiesOver" +
+"lay\" class=\"container hidden\">\r\n            <div class=\"dialog\">\r\n              " +
+"  <div class=\"row\">\r\n                    <span data-l10n-id=\"document_properties" +
+"_file_name\">File name:</span> <p id=\"fileNameField\">-</p>\r\n                </div" +
+">\r\n                <div class=\"row\">\r\n                    <span data-l10n-id=\"do" +
+"cument_properties_file_size\">File size:</span> <p id=\"fileSizeField\">-</p>\r\n    " +
+"            </div>\r\n                <div class=\"separator\"></div>\r\n             " +
+"   <div class=\"row\">\r\n                    <span data-l10n-id=\"document_propertie" +
+"s_title\">Title:</span> <p id=\"titleField\">-</p>\r\n                </div>\r\n       " +
+"         <div class=\"row\">\r\n                    <span data-l10n-id=\"document_pro" +
+"perties_author\">Author:</span> <p id=\"authorField\">-</p>\r\n                </div>" +
+"\r\n                <div class=\"row\">\r\n                    <span data-l10n-id=\"doc" +
+"ument_properties_subject\">Subject:</span> <p id=\"subjectField\">-</p>\r\n          " +
 "      </div>\r\n                <div class=\"row\">\r\n                    <span data-" +
-"l10n-id=\"document_properties_modification_date\">Modification Date:</span> <p id=" +
-"\"modificationDateField\">-</p>\r\n                </div>\r\n                <div clas" +
-"s=\"row\">\r\n                    <span data-l10n-id=\"document_properties_creator\">C" +
-"reator:</span> <p id=\"creatorField\">-</p>\r\n                </div>\r\n             " +
-"   <div class=\"separator\"></div>\r\n                <div class=\"row\">\r\n           " +
-"         <span data-l10n-id=\"document_properties_producer\">PDF Producer:</span> " +
-"<p id=\"producerField\">-</p>\r\n                </div>\r\n                <div class=" +
-"\"row\">\r\n                    <span data-l10n-id=\"document_properties_version\">PDF" +
-" Version:</span> <p id=\"versionField\">-</p>\r\n                </div>\r\n           " +
-"     <div class=\"row\">\r\n                    <span data-l10n-id=\"document_propert" +
-"ies_page_count\">Page Count:</span> <p id=\"pageCountField\">-</p>\r\n               " +
-" </div>\r\n                <div class=\"buttonRow\">\r\n                    <button id" +
-"=\"documentPropertiesClose\" class=\"overlayButton\"><span data-l10n-id=\"document_pr" +
-"operties_close\">Close</span></button>\r\n                </div>\r\n            </div" +
-">\r\n        </div>\r\n\r\n    </div>  <!-- overlayContainer -->\r\n\r\n</div> <!-- outerC" +
-"ontainer -->\r\n\r\n<div id=\"printContainer\"></div>\r\n<div id=\"mozPrintCallback-shim\"" +
-" hidden>\r\n    <style scoped>\r\n#mozPrintCallback-shim {\r\n  position: fixed;\r\n  to" +
-"p: 0;\r\n  left: 0;\r\n  height: 100%;\r\n  width: 100%;\r\n  z-index: 9999999;\r\n\r\n  dis" +
-"play: block;\r\n  text-align: center;\r\n  background-color: rgba(0, 0, 0, 0.5);\r\n}\r" +
-"\n#mozPrintCallback-shim[hidden] {\r\n  display: none;\r\n}\r\n");
-
-
-WriteLiteral(@"@media print {
-  #mozPrintCallback-shim {
-    display: none;
-  }
-}
-
-#mozPrintCallback-shim .mozPrintCallback-dialog-box {
-  display: inline-block;
-  margin: -50px auto 0;
-  position: relative;
-  top: 45%;
-  left: 0;
-  min-width: 220px;
-  max-width: 400px;
-
-  padding: 9px;
-
-  border: 1px solid hsla(0, 0%, 0%, .5);
-  border-radius: 2px;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
-
-  background-color: #474747;
-
-  color: hsl(0, 0%, 85%);
-  font-size: 16px;
-  line-height: 20px;
-}
-#mozPrintCallback-shim .progress-row {
-  clear: both;
-  padding: 1em 0;
-}
-#mozPrintCallback-shim progress {
-  width: 100%;
-}
-#mozPrintCallback-shim .relative-progress {
-  clear: both;
-  float: right;
-}
-#mozPrintCallback-shim .progress-actions {
-  clear: both;
-}
-    </style>
-    <div class=""mozPrintCallback-dialog-box"">
-        <!-- TODO: Localise the following strings -->
-        Preparing document for printing...
-        <div class=""progress-row"">
-            <progress value=""0"" max=""100""></progress>
-            <span class=""relative-progress"">0%</span>
-        </div>
-        <div class=""progress-actions"">
-            <input type=""button"" value=""Cancel"" class=""mozPrintCallback-cancel"">
-        </div>
-    </div>
-</div>
-
-");
+"l10n-id=\"document_properties_keywords\">Keywords:</span> <p id=\"keywordsField\">-<" +
+"/p>\r\n                </div>\r\n                <div class=\"row\">\r\n                " +
+"    <span data-l10n-id=\"document_properties_creation_date\">Creation Date:</span>" +
+" <p id=\"creationDateField\">-</p>\r\n                </div>\r\n                <div c" +
+"lass=\"row\">\r\n                    <span data-l10n-id=\"document_properties_modific" +
+"ation_date\">Modification Date:</span> <p id=\"modificationDateField\">-</p>\r\n     " +
+"           </div>\r\n                <div class=\"row\">\r\n                    <span " +
+"data-l10n-id=\"document_properties_creator\">Creator:</span> <p id=\"creatorField\">" +
+"-</p>\r\n                </div>\r\n                <div class=\"separator\"></div>\r\n  " +
+"              <div class=\"row\">\r\n                    <span data-l10n-id=\"documen" +
+"t_properties_producer\">PDF Producer:</span> <p id=\"producerField\">-</p>\r\n       " +
+"         </div>\r\n                <div class=\"row\">\r\n                    <span da" +
+"ta-l10n-id=\"document_properties_version\">PDF Version:</span> <p id=\"versionField" +
+"\">-</p>\r\n                </div>\r\n                <div class=\"row\">\r\n            " +
+"        <span data-l10n-id=\"document_properties_page_count\">Page Count:</span> <" +
+"p id=\"pageCountField\">-</p>\r\n                </div>\r\n                <div class=" +
+"\"buttonRow\">\r\n                    <button id=\"documentPropertiesClose\" class=\"ov" +
+"erlayButton\"><span data-l10n-id=\"document_properties_close\">Close</span></button" +
+">\r\n                </div>\r\n            </div>\r\n        </div>\r\n        <div id=\"" +
+"printServiceOverlay\" class=\"container hidden\">\r\n            <div class=\"dialog\">" +
+"\r\n                <div class=\"row\">\r\n                    <span data-l10n-id=\"pri" +
+"nt_progress_message\">Preparing document for printing…</span>\r\n                </" +
+"div>\r\n                <div class=\"row\">\r\n                    <progress value=\"0\"" +
+" max=\"100\"></progress>\r\n                    <span data-l10n-id=\"print_progress_p" +
+"ercent\" data-l10n-args=\'{ \"progress\": 0 }\' class=\"relative-progress\">0%</span>\r\n" +
+"                </div>\r\n                <div class=\"buttonRow\">\r\n               " +
+"     <button id=\"printCancel\" class=\"overlayButton\"><span data-l10n-id=\"print_pr" +
+"ogress_close\">Cancel</span></button>\r\n                </div>\r\n            </div>" +
+"\r\n        </div>\r\n    </div>  <!-- overlayContainer -->\r\n</div> <!-- outerContai" +
+"ner -->\r\n<div id=\"printContainer\"></div>");
 
 
         }

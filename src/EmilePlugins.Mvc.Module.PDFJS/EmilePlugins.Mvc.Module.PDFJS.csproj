@@ -64,11 +64,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Viewer.cshtml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\ViewStream.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ViewStream.cshtml</DependentUpon>
-    </Compile>
     <Compile Include="ResourceSetting.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -266,10 +261,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Pages\ViewStream.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>ViewStream.generated.cs</LastGenOutput>
-    </None>
     <EmbeddedResource Include="Content\scripts\compatibility.js" />
     <EmbeddedResource Include="Content\scripts\debugger.js" />
     <EmbeddedResource Include="Content\images\annotation-check.svg" />
@@ -354,8 +345,18 @@
     <EmbeddedResource Include="Content\scripts\pdf.worker.js" />
     <EmbeddedResource Include="Content\css\viewer.css" />
     <EmbeddedResource Include="Content\scripts\jquery-1.10.2.min.js" />
-    <Content Include="Content\viewer.html" />
+    <EmbeddedResource Include="Content\images\loading-small%402x.png" />
+    <EmbeddedResource Include="Content\images\treeitem-collapsed%402x.png" />
+    <EmbeddedResource Include="Content\images\treeitem-collapsed-rtl%402x.png" />
+    <EmbeddedResource Include="Content\images\treeitem-collapsed-rtl.png" />
+    <EmbeddedResource Include="Content\images\treeitem-collapsed.png" />
+    <EmbeddedResource Include="Content\images\treeitem-expanded%402x.png" />
+    <EmbeddedResource Include="Content\images\treeitem-expanded.png" />
+    <EmbeddedResource Include="Content\viewer.html" />
     <EmbeddedResource Include="Content\scripts\viewer.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Content\html\viewer.html" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace Web.Pdf.Preview.Models
+namespace Mvc.Module.PDFJS.Demo.Models
 {
     public class ExternalLoginConfirmationViewModel
     {

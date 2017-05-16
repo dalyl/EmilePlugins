@@ -36,7 +36,6 @@ namespace EmilePlugins.Mvc.Module.PDFJS
 
             Routes.AddRazorPage("/", x => new Viewer());
             Routes.AddRazorPage("/View", x => new Viewer());
-            Routes.AddRazorPage("/ViewStream", x => new ViewStream());
 
             var assembly = GetExecutingAssembly();
             var reses = assembly.GetManifestResourceNames();
@@ -44,6 +43,7 @@ namespace EmilePlugins.Mvc.Module.PDFJS
 
             #region Embedded static content
 
+            Register.AddSamePathTypeResource($"/(.)+/html",  StaticResource.Define.Html, () => GetContentFolderNamespace("html"));
             Register.AddCombinedResource($"/css[0-9]+",  StaticResource.Define.Css, () => GetContentFolderNamespace("css"), Stylesheets);
             Register.AddEmbeddedResource($"/js/compatibility", StaticResource.Define.Javascript, () => GetContentResourceName("scripts", "compatibility.js"));
             Register.AddEmbeddedResource($"/js/l10n", StaticResource.Define.Javascript, () => GetContentResourceName("scripts", "l10n.js"));
@@ -57,6 +57,8 @@ namespace EmilePlugins.Mvc.Module.PDFJS
             Register.AddSamePathTypeResource($"/images/(.)+/png", StaticResource.Define.ImagePng, () => GetContentFolderNamespace("images"));
             Register.AddSamePathTypeResource($"/images/(.)+/jpg", StaticResource.Define.ImageJpg, () => GetContentFolderNamespace("images"));
             Register.AddSamePathTypeResource($"/images/(.)+/gif", StaticResource.Define.ImageGif, () => GetContentFolderNamespace("images"));
+            Register.AddSamePathTypeResource($"/images/(.)+/cur", StaticResource.Define.ImageCur, () => GetContentFolderNamespace("images"));
+            Register.AddSamePathTypeResource($"/images/(.)+/svg", StaticResource.Define.ImageSvg, () => GetContentFolderNamespace("images"));
             Register.AddSamePathTypeResource($"/locale/(.)+", StaticResource.Define.Locale, () => GetContentFolderNamespace("locale"));
 
             #endregion
