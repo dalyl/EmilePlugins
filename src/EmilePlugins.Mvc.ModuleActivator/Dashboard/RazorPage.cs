@@ -27,7 +27,6 @@ namespace EmilePlugins.Mvc.ModuleActivator
         public string AppPath { get; internal set; }
         public int StatsPollingInterval { get; internal set; }
         public Stopwatch GenerationTime { get; private set; }
-
        
 
         internal DashboardRequest Request { private get; set; }
