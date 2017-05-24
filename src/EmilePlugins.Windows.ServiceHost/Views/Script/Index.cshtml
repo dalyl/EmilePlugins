@@ -1,0 +1,35 @@
+﻿@{
+    ViewData["Title"] = "脚本管理";
+}
+@model EmilePlugins.Windows.ServiceHost.Models.ScriptSubmitModel
+<h2>@ViewData["Title"].</h2>
+
+@using(Html.BeginForm("Excute", "Script",null, FormMethod.Post,true,new   {  @class="form-horizontal"})){
+
+<div class="form-group">
+    @Html.LabelFor(m => m.Name)
+    @Html.TextBoxFor(m => m.Name, new { placeholder = "名称", @class= "form-control" })
+</div>
+<div class="form-group">
+    @Html.LabelFor(m => m.Description)
+    @Html.TextAreaFor(m => m.Description, new { placeholder = "描述", @class = "form-control" })
+</div>
+<div class="form-group">
+    @Html.LabelFor(m => m.Path)
+    @Html.TextBoxFor(m => m.Path, new { placeholder = "执行路径", @class = "form-control" })
+    <p class="help-block">需要脚本代码执行电脑绝对路径.</p>
+</div>
+<div class="form-group">
+    @Html.LabelFor(m => m.Body)
+    @Html.TextAreaFor(m => m.Body, new { placeholder = "执行体", @class = "form-control" })
+</div>
+<div class="checkbox">
+    <label>
+        <input type="checkbox"> 顺便保存
+    </label>
+</div>
+<button type="submit" class="btn btn-default">提交</button>
+}
+ 
+
+
