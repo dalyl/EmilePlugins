@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E8A5E5B5-785D-41F1-A4BA-0271F3394646}</ProjectGuid>
+    <ProjectGuid>{28F74107-9D1C-43F2-9336-EE9A3E19B470}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>EmilePlugins.Windows.ServiceDefinition</RootNamespace>
-    <AssemblyName>EmilePlugins.Windows.ServiceDefinition</AssemblyName>
+    <RootNamespace>EmilePlugins.Windows.ScriptService</RootNamespace>
+    <AssemblyName>EmilePlugins.Windows.ScriptService</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -32,7 +32,6 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -41,9 +40,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IPluginService.cs" />
+    <Compile Include="Class1.cs" />
+    <Compile Include="FileShellExtension.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ServiceContainer.cs" />
+    <Compile Include="SharpScriptService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EmilePlugins.Common.DynamicAssembly\EmilePlugins.Common.DynamicAssembly.csproj">
+      <Project>{2bca5f30-eade-45bd-b164-9aa9fc3d340e}</Project>
+      <Name>EmilePlugins.Common.DynamicAssembly</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EmilePlugins.Common\EmilePlugins.Common.csproj">
+      <Project>{614f518c-5b7d-4a04-86aa-6493df79ff98}</Project>
+      <Name>EmilePlugins.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EmilePlugins.Windows.ServiceDefinition\EmilePlugins.Windows.ServiceDefinition.csproj">
+      <Project>{e8a5e5b5-785d-41f1-a4ba-0271f3394646}</Project>
+      <Name>EmilePlugins.Windows.ServiceDefinition</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

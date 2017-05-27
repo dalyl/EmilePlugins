@@ -6,5 +6,41 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
+
+namespace  EmilePlugins.Common.DynamicAssembly.PlugPut
+{
+    [Serializable]
+    public class PlugPut : MarshalByRefObject, IObjcet
+    {
+
+        private string plugName = "my plugName value is default!";
+
+        public string PlugName
+        {
+            get { return plugName; }
+            set { plugName = value; }
+        }
+
+        public PlugPut() { }
+
+
+        public PlugPut(string plusName)
+        {
+            this.PlugName = plusName;
+        }
+
+        public void Put()
+        {
+            Console.WriteLine("Default plug value is:" + plugName);
+        }
+
+        public string Put(string plus)
+        {
+            Console.WriteLine("Put plus value is:" + plus);
+            return ("-------------------- PlugPut result info is welcome -------------------------");
+        }
+    }
+}
 

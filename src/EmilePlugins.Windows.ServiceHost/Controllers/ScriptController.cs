@@ -17,6 +17,7 @@ using Microsoft.AspNetCore.Mvc.ModelBinding;
 using System.Text.Encodings.Web;
 using EmilePlugins.Windows.ServiceDefinition;
 using EmilePlugins.Windows.ServiceHost.Models;
+using EmilePlugins.Common.DynamicAssembly;
 
 namespace EmilePlugins.Windows.ServiceHost.Controllers
 {
@@ -28,16 +29,52 @@ namespace EmilePlugins.Windows.ServiceHost.Controllers
             return View();
         }
 
-        public async Task<IActionResult>  Excute(ScriptSubmitModel Model)
+        public async Task<IActionResult> Excute(ScriptSubmitModel Model)
         {
-            var context = new ActionContext(this.HttpContext, this.RouteData, this.ControllerContext.ActionDescriptor);
-               
-            var html =await RenderView(context, $"Template/Common.cshtml", Model);
+            if (ModelState.IsValid == false) return Content("提交数据有异常");
 
-            return Content(html);
+            var context = new ActionContext(this.HttpContext, this.RouteData, this.ControllerContext.ActionDescriptor);
+            var html = await RenderView(context, $"Template/Executable.cshtml", Model);
+            if (string.IsNullOrEmpty(html)) return Content("提交代码转化失败");
+
+            var services = context.HttpContext.RequestServices;
+            var Dynamicer = services.GetRequiredService<DynamicService>();
+
+            var Name = $@"{Model.Path}\ScriptProvider.exe";
+            if (Directory.Exists(Name)) return Content("脚本已存在");
+
+            var result = Dynamicer.GenerateExecutable(Name, html);
+            if (result.Succeeded == false) Content(result.Errors.First());
+
+            StartScript(result.Content);
+
+            return Content(result.Content);
         }
 
-        public async Task<string> RenderView(ActionContext context, string viewName, object model = null)
+        void StartScript(string cmd)
+        {
+            cmd = cmd.Replace(" ", string.Empty);
+            var run = Task.Run(() =>
+            {
+                using (System.Diagnostics.Process p = new System.Diagnostics.Process())
+                {
+                    try
+                    {
+                        p.StartInfo.FileName = cmd;
+                        p.StartInfo.UseShellExecute = true;    //是否使用操作系统shell启动
+                        p.StartInfo.CreateNoWindow = true;//不显示程序窗口
+                        p.Start();//启动程序
+                        p.WaitForExit();//等待程序执行完退出进程
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.Write(ex);
+                    }
+                }
+            });
+        }
+
+        async Task<string> RenderView(ActionContext context, string viewName, object model = null)
         {
             this.ViewData.Model = model;
             var services = context.HttpContext.RequestServices;

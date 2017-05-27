@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("EmilePlugins.Common.DynamiclyAssembly")]
+[assembly: AssemblyTitle("EmilePlugins.Windows.ScriptService")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("EmilePlugins.Common.DynamiclyAssembly")]
+[assembly: AssemblyProduct("EmilePlugins.Windows.ScriptService")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("2bca5f30-eade-45bd-b164-9aa9fc3d340e")]
+[assembly: Guid("28f74107-9d1c-43f2-9336-ee9a3e19b470")]
 
 // Version information for an assembly consists of the following four values:
 //

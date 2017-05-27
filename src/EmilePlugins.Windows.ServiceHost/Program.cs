@@ -28,7 +28,7 @@ namespace EmilePlugins.Windows.ServiceHost
             }
             var path = $@"d:\ServiceHost\{DateTime.Today.ToString("yyyy-MM-dd")}";
             if (Directory.Exists(path) == false) Directory.CreateDirectory(path);
-            using (StreamWriter sw = new StreamWriter($@"{path}\{DateTime.Now.ToString("hh-mm-ss")}.txt")) {
+            using (StreamWriter sw = new StreamWriter($@"{path}\{DateTime.Now.ToString("HH-mm-ss")}.txt")) {
                 Console.SetOut(sw);
 
                 var tray = new TrayHost();
